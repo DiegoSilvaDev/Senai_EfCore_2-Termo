@@ -89,8 +89,8 @@ namespace EntityFCore_Senai.Repositories
                 Produto produtoTemp = BuscarPorId(produto.Id);
 
                 //Verifica se o produto exite, caso não exista gera uma exception(mensagem tratada)
-                if (produtoTemp == null)
-                    throw new Exception("Produto não encontrado");
+                //if (produtoTemp == null)
+                //   throw new Exception("Produto não encontrado");
 
                 //Altera o produto no contexto e após alterar salva o que foi feito
                 produtoTemp.Nome = produto.Nome;
@@ -183,7 +183,7 @@ namespace EntityFCore_Senai.Repositories
             }
             catch (Exception ex)
             {
-
+                // TODO : Incluir erro no log do banco de dados
                 throw new Exception(ex.Message);
             }
         }
